@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFund</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>CampusFund</h1>
+        <div class="wallet-box">
+          <span id="walletAddress" class="wallet-address">Not connected</span>
+          <button id="connectBtn" class="btn btn-primary">Connect Wallet</button>
+        </div>
+      </header>
+
+      <p id="networkWarning" class="network-warning hidden"></p>
+      <p id="statusBox" class="status hidden"></p>
+
+      <main class="grid">
+        <section class="card">
+          <h2>Create a Campaign</h2>
+          <form id="createForm">
+            <label>Title
+              <input type="text" id="cTitle" placeholder="Robotics Club Trip" required />
+            </label>
+            <label>Description / metadata URI
+              <textarea id="cDescription" placeholder="Short public description"></textarea>
+              <small class="privacy-note">Public on-chain data - do not enter private or sensitive information.</small>
+            </label>
+            <label>Goal (ETH)
+              <input type="number" step="0.0001" min="0" id="cGoal" placeholder="1.5" required />
+            </label>
+            <label>Duration (hours)
+              <input type="number" step="1" min="1" max="720" id="cDuration" placeholder="24" required />
+            </label>
+            <button type="submit" class="btn btn-primary">Create Campaign</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Load a Campaign</h2>
+          <form id="loadForm">
+            <label>Campaign ID
+              <input type="number" step="1" min="1" id="loadId" placeholder="1" required />
+            </label>
+            <button type="submit" class="btn btn-secondary">Load</button>
+          </form>
+
+          <div id="campaignSection" class="hidden">
+            <div id="campaignDetails"></div>
+
+            <form id="contributeForm" class="hidden inline-form">
+              <label>Amount (ETH)
+                <input type="number" step="0.0001" min="0" id="contributeAmount" placeholder="0.1" required />
+              </label>
+              <button type="submit" class="btn btn-primary">Contribute</button>
+            </form>
+
+            <div class="action-buttons">
+              <button id="cancelBtn" class="btn btn-warning hidden">Cancel Campaign</button>
+              <button id="finalizeBtn" class="btn btn-secondary hidden">Finalize Campaign</button>
+              <button id="withdrawBtn" class="btn btn-primary hidden">Withdraw Funds</button>
+              <button id="refundBtn" class="btn btn-secondary hidden">Claim Refund</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

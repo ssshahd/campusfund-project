@@ -1,0 +1,245 @@
+:root {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --border: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.wallet-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wallet-address {
+  font-family: monospace;
+  color: var(--muted);
+}
+
+.network-warning {
+  background: #451a03;
+  border: 1px solid var(--warning);
+  color: #fde68a;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.status {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+.status-info {
+  background: #1e293b;
+  color: var(--text);
+}
+
+.status-success {
+  background: #052e16;
+  border-color: var(--success);
+  color: #bbf7d0;
+}
+
+.status-error {
+  background: #450a0a;
+  border-color: var(--error);
+  color: #fecaca;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.btn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-warning {
+  background: var(--warning);
+  color: #451a03;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.description {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+.details-grid dt {
+  color: var(--muted);
+}
+
+.details-grid dd {
+  margin: 0;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-active {
+  background: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.badge-successful {
+  background: #052e16;
+  color: #bbf7d0;
+}
+
+.badge-failed {
+  background: #450a0a;
+  color: #fecaca;
+}
+
+.badge-cancelled {
+  background: #3f3f46;
+  color: #d4d4d8;
+}
+
+.inline-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.inline-form label {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.privacy-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
